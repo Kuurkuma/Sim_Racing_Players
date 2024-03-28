@@ -7,7 +7,7 @@ import pandas as pd
 df = pd.read_pickle('/Users/macbook/Dropbox/Mac/Documents/Pro/Data_Analyst/simracing-players/data/interim/sim_racing_games-1.0.pkl')
 
 # Aggregate data to calculate the metrics
-max_players_day = df.groupby('datetime')['players'].sum().idxmax().strftime('%Y-%m-%d')
+max_players_day = df.groupby('datetime')['players'].sum().idxmax()
 game_most_players = df.groupby('game')['players'].sum().idxmax()
 game_most_played_avg = df.groupby('game')['players'].mean().idxmax()
 
