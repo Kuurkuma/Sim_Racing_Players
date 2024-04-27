@@ -15,7 +15,7 @@ After gathering and processing the data from SteamDB, we will utilize Plotly and
 
 ---
 
-(This will be a new project by itseld)
+_(This will be a new project by itself)_
 
 ## 3.Integration of real-time data from various platforms via API calls:
 
