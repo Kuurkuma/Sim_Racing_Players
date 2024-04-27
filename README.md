@@ -1,5 +1,7 @@
 # Sim-racing real-time and historical data analysis:
 
+![Global trend](https://github.com/Kuurkuma/sim-racing-players/blob/f3b18eb08e0d64fdd078d1d5b31ead61800c3eec/reports/figures/line_chart-global_trend.png)
+
 *History of racing simulation games between 2013-2023 on Steam and integration of real-time data from various platforms*.
 
 Hypothesis: "Sim-racing games are becoming increasingly popular".
