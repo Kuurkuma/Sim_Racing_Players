@@ -13,6 +13,10 @@ We will start by examining historical data from the Steam platform, focusing on 
 
 After gathering and processing the data from SteamDB, we will utilize Plotly and Streamlit to build an interactive dashboard. This dashboard will provide users with an immersive experience, allowing them to explore the trends and patterns identified in our analysis. With Plotly's powerful visualization capabilities and Streamlit's user-friendly interface, users will be able to interact with the data, gaining insights into the popularity of sim-racing games over the years.
 
+---
+
+(This will be a new project by itseld)
+
 ## 3.Integration of real-time data from various platforms via API calls:
 
 We will then exploit real-time data streams from other services, including Steam, iRacing, marketplaces and publisher platforms. 
