@@ -4,7 +4,7 @@ import pandas as pd
 
 # Define page config
 st.set_page_config(
-    page_title="Steam Sim racing Dashboard",
+    page_title="Steam Sim racing Dashboard (BETA VERSION)",
     page_icon=":bar_chart:",
     layout='wide'    
 )
