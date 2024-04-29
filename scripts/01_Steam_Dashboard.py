@@ -20,7 +20,7 @@ def load_data(data_path:str):
     return data
 
 # Define dataframe
-df = load_data('/Users/macbook/Dropbox/Mac/Documents/Pro/Data_Analyst/simracing-players/data/interim/sim_racing_games-1.0.pkl')
+df = load_data('data/interim/sim_racing_games-1.0.pkl')
 
 # Create multiselect widget for selecting games
 default_game = ['Assetto_corsa','Euro_truck_2']
