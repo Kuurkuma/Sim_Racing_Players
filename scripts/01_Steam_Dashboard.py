@@ -1,5 +1,6 @@
 import streamlit as st
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 
 # Define page config
@@ -22,62 +23,65 @@ def load_data(data_path:str):
 # Define dataframe
 df = load_data('data/interim/sim_racing_games-1.0.pkl')
 
+
+#########################
 # Create multiselect widget for selecting games
-default_game = ['Assetto_corsa','Euro_truck_2']
+default_game = ['Forza_horizon_4']
 selected_games = st.multiselect(
     label="Select games to compare",
     options=df['game'].unique(),
     default=default_game
 )
-#########################
 
 # Function to create line chart for selected games
 def line_chart_games(selected_games):
-    # Filter dataframe based on selected games
+    # Filter DataFrame based on selected games
     filtered_df = df[df['game'].isin(selected_games)]
-    
-    # Create line chart
+
+    # Calculate global trend line
+    global_trend = filtered_df.groupby('datetime')['players'].mean().reset_index()
+
+    # Create line chart for the selected games
     line_chart = px.line(
-        filtered_df, 
-        x='datetime', 
-        y='players', 
-        color='game', 
-        title='', 
+        filtered_df,
+        x='datetime',
+        y='players',
+        color='game',
+        title='Active players per game (2013-2023)',
         template='plotly_dark'
     )
-    
-    # Customize layout
+
+    # Add global trend line to the chart
+    line_chart.add_trace(
+        go.Scatter(
+            x=global_trend['datetime'],
+            y=global_trend['players'],
+            mode='lines',
+            name='Global Trend',
+            line=dict(color='#d62728', width=2)  # Brick red color
+        )
+    )
+
+    # Update layout of the chart
     line_chart.update_layout(
+        height=720,
+        width=1200,
+        showlegend=True,  # Set to True if you want to display the legend
         xaxis=dict(
             showgrid=False,
-            title='Adjust the sliders to modify the time window. Select game labels to reveal the corresponding games',
-            rangeselector=dict(
-                buttons=list([
-                    dict(count=1, label="1m", step="month", stepmode="backward"),
-                    dict(count=6, label="6m", step="month", stepmode="backward"),
-                    dict(count=1, label="1y", step="year", stepmode="backward"),
-                    dict(count=3, label="3y", step="year", stepmode="backward"),
-                    dict(step="all")
-                ]),
-                bgcolor="rgba(255, 255, 255, 0.8)",  # Background color of the rangeselector
-                activecolor="rgba(255, 255, 255, 0.8)",  # Active button color
-                bordercolor="rgba(0, 0, 0, 0.2)",
-                borderwidth=1,
-                font=dict(color="rgba(0, 0, 0, 0.8)")  # Font color
-            ),
-            rangeslider=dict(
-                visible=True,
-                thickness=0.05,
-                bgcolor="rgba(255, 255, 255, 0.2)"
-            ),
-            type="date"
+            title='Date'
         ),
-        yaxis=dict(showgrid=False,title=''),
-        yaxis_tickmode="array",
-        yaxis_tickvals=[],
-        yaxis_ticktext=[],
-        showlegend=False
+        yaxis=dict(
+            showgrid=False,
+            title='Active Players'
+        ),
+        legend=dict(
+            title='Games',
+            font=dict(color="rgba(255, 100, 100, 100)")
+        ),
+        xaxis_rangeslider_visible=True  # Enable range slider for zooming
     )
+
     return line_chart
 
 st.subheader('Active players per game (2013-2023)')
