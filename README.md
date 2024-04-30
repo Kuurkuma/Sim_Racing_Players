@@ -3,12 +3,12 @@
 ![Global trend](https://github.com/Kuurkuma/sim-racing-players/blob/f3b18eb08e0d64fdd078d1d5b31ead61800c3eec/reports/figures/line_chart-global_trend.png)
 
 
-**Embarking on our journey to delve into the world of sim-racing games, we aim to achieve two key objectives:**
+**Embarking on the journey to delve into the world of sim-racing games, here are two key objectives to achieve:**
 
 - Exploring historical trends in sim-racing games on Steam.
 - Integrating real-time data from various platforms to capture current patterns and player activity
 
-# Hostorical trends
+# Historical trends
 
 ## Introduction
 The analysis aims to explore the historical trends of racing simulation games on the Steam platform between 2013 and 2023. The hypothesis posits that sim-racing games are experiencing increasing popularity over time. 
@@ -16,10 +16,20 @@ The analysis aims to explore the historical trends of racing simulation games on
 ## Background
 The Steam database serves as a rich source of historical gaming data, offering insights into user preferences and trends over time. By focusing on the top 10 "Automobile Sim" games on Steam from 2013 to 2023, provided in .csv format by the SteamDB website, we seek to unravel patterns and fluctuations in the popularity of racing simulation games.
 
+
+## Tools used:
+
+- Python: as the language for this project, using Pandas for data manipulation and analysis, and Plotly for creating interactive visualizations.
+- Streamlit: To build an user-friendly dashboard.
+- Git & GitHub: Git for version control system & GitHub for tracking changes.
+
 ## Analysis
 Our analysis commences with an in-depth examination of historical data retrieved from the Steam platform. Through the exploration of Steam database records, we aim to identify trends, shifts, and recurrent patterns in the popularity of racing simulation games over the past decade.
 
+### Is sim racing getting more popular ?
 
+
+--- 
 
 ## 2. Create an interactive dashboard using Plotly & Streamlit
 
