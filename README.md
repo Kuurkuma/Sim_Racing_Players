@@ -1,15 +1,25 @@
-# Sim-racing real-time and historical data analysis:
+# Sim-racing data analysis
 
 ![Global trend](https://github.com/Kuurkuma/sim-racing-players/blob/f3b18eb08e0d64fdd078d1d5b31ead61800c3eec/reports/figures/line_chart-global_trend.png)
 
-*History of racing simulation games between 2013-2023 on Steam and integration of real-time data from various platforms*.
 
-Hypothesis: "Sim-racing games are becoming increasingly popular".
-To address this proposition, we will use a multi-faceted approach:
+**Embarking on our journey to delve into the world of sim-racing games, we aim to achieve two key objectives:**
 
-## 1.Analysis of Steam database for historical trends:
+- Exploring historical trends in sim-racing games on Steam.
+- Integrating real-time data from various platforms to capture current patterns and player activity
 
-We will start by examining historical data from the Steam platform, focusing on the 10 most popular games labelled "Automobile Sim" from 2013 to 2023. The data comes from .csv files provided by the SteamDB website. Through this analysis, we aim to discover trends, patterns and fluctuations in the popularity of racing simulation games over the last decade.
+# Hostorical trends
+
+## Introduction
+The analysis aims to explore the historical trends of racing simulation games on the Steam platform between 2013 and 2023. The hypothesis posits that sim-racing games are experiencing increasing popularity over time. 
+
+## Background
+The Steam database serves as a rich source of historical gaming data, offering insights into user preferences and trends over time. By focusing on the top 10 "Automobile Sim" games on Steam from 2013 to 2023, provided in .csv format by the SteamDB website, we seek to unravel patterns and fluctuations in the popularity of racing simulation games.
+
+## Analysis
+Our analysis commences with an in-depth examination of historical data retrieved from the Steam platform. Through the exploration of Steam database records, we aim to identify trends, shifts, and recurrent patterns in the popularity of racing simulation games over the past decade.
+
+
 
 ## 2. Create an interactive dashboard using Plotly & Streamlit
 
