@@ -26,7 +26,9 @@ The Steam database serves as a rich source of historical gaming data, offering i
 ## Analysis
 Our analysis commences with an in-depth examination of historical data retrieved from the Steam platform. Through the exploration of Steam database records, we aim to identify trends, shifts, and recurrent patterns in the popularity of racing simulation games over the past decade.
 
-### Is sim racing getting more popular ?
+### How average active players is evolving over time?
+
+
 
 
 --- 
