@@ -1,6 +1,6 @@
 # Sim-racing data analysis
 
-![Global trend](https://github.com/Kuurkuma/sim-racing-players/blob/f3b18eb08e0d64fdd078d1d5b31ead61800c3eec/reports/figures/line_chart-global_trend.png)
+![Global trend](reports/figures/01-line_chart-global_trend.png)
 
 
 **Embarking on the journey to delve into the world of sim-racing games, here are two key objectives to achieve:**
@@ -16,7 +16,6 @@ The analysis aims to explore the historical trends of racing simulation games on
 ## Background
 The Steam database serves as a rich source of historical gaming data, offering insights into user preferences and trends over time. By focusing on the top 10 "Automobile Sim" games on Steam from 2013 to 2023, provided in .csv format by the SteamDB website, we seek to unravel patterns and fluctuations in the popularity of racing simulation games.
 
-
 ## Tools used:
 
 - Python: as the language for this project, using Pandas for data manipulation and analysis, and Plotly for creating interactive visualizations.
@@ -26,79 +25,79 @@ The Steam database serves as a rich source of historical gaming data, offering i
 ## Analysis
 Our analysis commences with an in-depth examination of historical data retrieved from the Steam platform. Through the exploration of Steam database records, we aim to identify trends, shifts, and recurrent patterns in the popularity of racing simulation games over the past decade.
 
-### How average active players is evolving over time?
-
+### 01. How average active players is evolving over time?  
 We see a global positive trend in the last 10 years.
 There was a huge peak in December 2014 with 21'620 players on average.
 But zooming on the year 2023, we see the average players stay relatively steady, even dropping until 5400k players in December 2023.
 
-[image]
+![2023_trend](reports/figures/line_chart-global_trend_2023.png)
 
-### 02. How is the Twitch viewership for sim racing games changing?
-
-[image]
-
+### 02. How is the Twitch viewership for sim racing games changing?  
 February 2016 and November 2021 saw huge peaks in twitch viewers. Since, 2021, the average viewers per game has been decreasing.
 
-### 03. What is the trend in the average player count per game over time?
+![global_viewvers](reports/figures/line_chart-global_trend_viewers.png)
 
-[images]
-
-
+### 03. What is the trend in the average player count per game over time?  
 Head-to-head:
 
-- Assetto Corsa Competizione vs Automobilista 2:
-[images]
+- Assetto Corsa Competizione vs Automobilista 2:  
 Assetto Corsa Competizione has a way higher player base than Automobilista 2.
 
-- Euro truck 2 vs American simulator:
-[images]
-Euro truck has a bigger & a constant growing active player community despite a a fall at the end of 2023.
+![acc_auto2](reports/figures/line_chart-acc-automob.png)
+
+
+- Euro truck 2 vs American simulator:  
+Euro truck has a bigger & a constant growing active player community despite a a fall at the end of 2023.  
 American truck has a smaller but steady player base.
 
-- Forza horizon 4 VS Forza horizon 5:
-[images]
+![euro_american](reports/figures/line_chart-euro-american_truck.png)
+
+- Forza horizon 4 VS Forza horizon 5:  
 Despite being the older game, FH 4 keeps a certain popularity among Steam players.
 
+![fh4_fh5](reports/figures/line_chart-fh4-fh5.png)
 
-- Assetto Corsa vs BeamNG:
-[images]
-Assetto Corsa and BeamNG has a similar player base. Sinice the launch, Assetto Corsa was the most popular but in August 2019, BeamNG became more popular.
+
+- Assetto Corsa vs BeamNG:  
+Assetto Corsa and BeamNG has a similar player base. Since the launch, Assetto Corsa was the most popular but in August 2019, BeamNG became more popular.
 It maintained a higher player based until now.
 
-- Car X drift vs Dirt rally 2.0:
-[images]
-Dirt Rally 2.0 was a more popular game until Q1 of 2021 where Car X got more active player. since then, Dirt only lost in popularity, 
-when Car X drift maintained a higher player base. 
+![assetto_beam](reports/figures/line_chart-asetto-beam.png)
 
-### 04. What is the game with the most active players?
+- Car X drift vs Dirt rally 2.0:  
+Dirt Rally 2.0 was a more popular game until Q1 of 2021 where Car X got more active player. since then, Dirt only lost in popularity, when Car X drift maintained a higher player base.
 
-[images]
+![carX_dirt2](reports/figures/line_chart-carX-dirt2.png)
 
+
+### 04. What is the game with the most active players?  
 Euro truck 2 is on average the game with the most active players of the last decade (2013-2023), followed by Forza horizon 5 & BeamNG.
 
-### 05. Which games attracts most twitch viewers ?
+![avg_players](reports/figures/bar_plot-avg_player_game.png)
 
-[images]
 
+### 05. Which games attracts most twitch viewers ?  
 For viewers, Forza Horizon 5 take the first place, followed by Euro truck simulator 2 and Forza horizon 4.
 
-### 06. Is there a correlation between average players count & twitch viewers ?
+![avg_viewers](reports/figures/bar_plot-avg_viewer_game.png)
 
-[images]
+### 06. Is there a correlation between average players count & twitch viewers ?  
 There is no clear correlation between active players & Twitch viewers.
 
-### 07. Which day players are the most active ? less active?
+![player_viewer](reports/figures/scatter_players_viewers.png)
 
+
+### 07. Which day players are the most active ? less active?  
 As anticipated, weekends tend to attract the highest number of players, with Sunday being the peak day.
 On the other hand, Wednesdays typically see fewer players on average.
 
-### 08. What is the distribution of twitch viewers per month in the last 3 years?
+![avg_days](reports/figures/bar_plot-avg_players_day.png)
 
-[images]
-
+### 08. What is the distribution of twitch viewers per month in the last 3 years?  
 In 2021 and 2022, June and November emerged as the peak months for Twitch viewership. 
 For 2023, March was the busiest month.
+
+![violin_viewer](reports/figures/violin_viewers.png)
 
 ## Conclusion
 
@@ -119,7 +118,8 @@ and exploring additional player demographics like location, age, and gender.
 
 ## 2. Create an interactive dashboard using Plotly & Streamlit
 
-After gathering and processing the data from SteamDB, we use Plotly and Streamlit to build an interactive dashboard. This dashboard will provide users with an immersive experience, allowing them to explore the trends and patterns identified in our analysis. With Plotly's powerful visualization capabilities and Streamlit's user-friendly interface, users will be able to interact with the data, gaining insights into the popularity of sim-racing games over the years.
+After gathering and processing the data from SteamDB, we use Plotly and Streamlit to build an interactive dashboard. This dashboard provides an exploration of trends and patterns identified in our analysis.  
+With Plotly's powerful visualization capabilities and Streamlit's user-friendly interface, users will be able to interact with the data, gaining insights into the popularity of sim-racing games over the years.
 
 ---
 
