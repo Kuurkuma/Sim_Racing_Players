@@ -93,12 +93,33 @@ There is no clear correlation between active players & Twitch viewers.
 As anticipated, weekends tend to attract the highest number of players, with Sunday being the peak day.
 On the other hand, Wednesdays typically see fewer players on average.
 
+### 08. What is the distribution of twitch viewers per month in the last 3 years?
+
+[images]
+
+In 2021 and 2022, June and November emerged as the peak months for Twitch viewership. 
+For 2023, March was the busiest month.
+
+## Conclusion
+
+Through our analysis of Steam automobile simulation racing games over the last decade, we've gained valuable insights into player trends and community preferences. 
+By examining gameplay data and Twitch viewership, we've identified the most popular games within the community. 
+Additionally, we've delved into average player engagement on a daily and monthly basis. 
+However, for a more comprehensive understanding of sim racing behaviors, we recognize the importance of incorporating data from other platforms such as iRacing 
+and exploring additional player demographics like location, age, and gender.
+
+## Limitations
+
+- Our dataset is limited to the Steam marketplace, excluding major sim racing games such as iRacing.
+- Certain games categorized as "Automobile sim racing" may not strictly align with traditional sim racing titles (CarX and the Forza Horizon series.)
+- The frequency of player count records is restricted to once per day throughout our analysis period.
+- Lack of Demographic Data: Absence of demographic information (e.g., age, gender, location) limits the understanding of player demographics and preferences.
 
 --- 
 
 ## 2. Create an interactive dashboard using Plotly & Streamlit
 
-After gathering and processing the data from SteamDB, we will utilize Plotly and Streamlit to build an interactive dashboard. This dashboard will provide users with an immersive experience, allowing them to explore the trends and patterns identified in our analysis. With Plotly's powerful visualization capabilities and Streamlit's user-friendly interface, users will be able to interact with the data, gaining insights into the popularity of sim-racing games over the years.
+After gathering and processing the data from SteamDB, we use Plotly and Streamlit to build an interactive dashboard. This dashboard will provide users with an immersive experience, allowing them to explore the trends and patterns identified in our analysis. With Plotly's powerful visualization capabilities and Streamlit's user-friendly interface, users will be able to interact with the data, gaining insights into the popularity of sim-racing games over the years.
 
 ---
 
