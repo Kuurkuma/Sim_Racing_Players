@@ -5,13 +5,13 @@ import pandas as pd
 
 # Define page config
 st.set_page_config(
-    page_title="Steam Sim racing Dashboard (BETA VERSION)",
+    page_title="Steam Sim racing Dashboard",
     page_icon=":bar_chart:",
     layout='wide'    
 )
 
 # Title and subheader
-st.title('Steam Sim racing Dashboard')
+st.title('Steam Sim racing Dashboard (BETA VERSION)')
 st.markdown('_10 years of data from Steam tagged "Automobile Sim Racing"_')
 
 # Define function to load data 
@@ -24,65 +24,33 @@ def load_data(data_path:str):
 df = load_data('data/interim/sim_racing_games-1.0.pkl')
 
 
-#########################
-# Create multiselect widget for selecting games
-default_game = ['Forza_horizon_4']
-selected_games = st.multiselect(
-    label="Select games to compare",
-    options=df['game'].unique(),
-    default=default_game
-)
+#_________________________
 
-# Function to create line chart for selected games
-def line_chart_games(selected_games):
-    # Filter DataFrame based on selected games
-    filtered_df = df[df['game'].isin(selected_games)]
+def global_trend_player():
+    global_trend = df.groupby('datetime')['players'].mean().reset_index()
 
-    # Calculate global trend line
-    global_trend = filtered_df.groupby('datetime')['players'].mean().reset_index()
+    fig = go.Figure()
 
-    # Create line chart for the selected games
-    line_chart = px.line(
-        filtered_df,
-        x='datetime',
-        y='players',
-        color='game',
-        title='Active players per game (2013-2023)',
-        template='plotly_dark'
-    )
-
-    # Add global trend line to the chart
-    line_chart.add_trace(
+    fig.add_trace(
         go.Scatter(
             x=global_trend['datetime'],
             y=global_trend['players'],
             mode='lines',
             name='Global Trend',
-            line=dict(color='#d62728', width=2)  # Brick red color
+            line=dict(color='#d62728', width=1) # brick red = #d62728
         )
     )
+    st.plotly_chart(fig)
 
-    # Update layout of the chart
-    line_chart.update_layout(
-        height=720,
-        width=1200,
-        showlegend=True,  # Set to True if you want to display the legend
-        xaxis=dict(
-            showgrid=False,
-            title='Date'
-        ),
-        yaxis=dict(
-            showgrid=False,
-            title='Active Players'
-        ),
-        legend=dict(
-            title='Games',
-            font=dict(color="rgba(255, 100, 100, 100)")
-        ),
-        xaxis_rangeslider_visible=True  # Enable range slider for zooming
+    fig.update_layout(
+        title='Global trend of average players',
+        yaxis_title='Average players',
+        template='plotly_dark',
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=False)
     )
+    
+    #return global_trend_player 
 
-    return line_chart
-
-st.subheader('Active players per game (2013-2023)')
-st.plotly_chart(line_chart_games(selected_games))
+st.subheader('Global trend of average players (2013-2023)')
+#st.plotly_chart(global_trend_player)
