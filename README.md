@@ -28,7 +28,70 @@ Our analysis commences with an in-depth examination of historical data retrieved
 
 ### How average active players is evolving over time?
 
+We see a global positive trend in the last 10 years.
+There was a huge peak in December 2014 with 21'620 players on average.
+But zooming on the year 2023, we see the average players stay relatively steady, even dropping until 5400k players in December 2023.
 
+[image]
+
+### 02. How is the Twitch viewership for sim racing games changing?
+
+[image]
+
+February 2016 and November 2021 saw huge peaks in twitch viewers. Since, 2021, the average viewers per game has been decreasing.
+
+### 03. What is the trend in the average player count per game over time?
+
+[images]
+
+
+Head-to-head:
+
+- Assetto Corsa Competizione vs Automobilista 2:
+[images]
+Assetto Corsa Competizione has a way higher player base than Automobilista 2.
+
+- Euro truck 2 vs American simulator:
+[images]
+Euro truck has a bigger & a constant growing active player community despite a a fall at the end of 2023.
+American truck has a smaller but steady player base.
+
+- Forza horizon 4 VS Forza horizon 5:
+[images]
+Despite being the older game, FH 4 keeps a certain popularity among Steam players.
+
+
+- Assetto Corsa vs BeamNG:
+[images]
+Assetto Corsa and BeamNG has a similar player base. Sinice the launch, Assetto Corsa was the most popular but in August 2019, BeamNG became more popular.
+It maintained a higher player based until now.
+
+- Car X drift vs Dirt rally 2.0:
+[images]
+Dirt Rally 2.0 was a more popular game until Q1 of 2021 where Car X got more active player. since then, Dirt only lost in popularity, 
+when Car X drift maintained a higher player base. 
+
+### 04. What is the game with the most active players?
+
+[images]
+
+Euro truck 2 is on average the game with the most active players of the last decade (2013-2023), followed by Forza horizon 5 & BeamNG.
+
+### 05. Which games attracts most twitch viewers ?
+
+[images]
+
+For viewers, Forza Horizon 5 take the first place, followed by Euro truck simulator 2 and Forza horizon 4.
+
+### 06. Is there a correlation between average players count & twitch viewers ?
+
+[images]
+There is no clear correlation between active players & Twitch viewers.
+
+### 07. Which day players are the most active ? less active?
+
+As anticipated, weekends tend to attract the highest number of players, with Sunday being the peak day.
+On the other hand, Wednesdays typically see fewer players on average.
 
 
 --- 
