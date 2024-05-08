@@ -21,12 +21,14 @@ def load_data(data_path:str):
     return data
 
 # Define dataframe
-df = load_data('data/interim/sim_racing_games-1.0.pkl')
+local_path = '/Users/macbook/Dropbox/Mac/Documents/Pro/Data_Analyst/Sim_Racing_Players/data/interim/sim_racing_games-1.0.pkl'
+net_path = 'data/interim/sim_racing_games-1.0.pkl'
+df = load_data(net_path)
 
-#_________________________
-
+#________________________
+# Define all elements of the dashboard as function to make the dashboard layout easier
 def table_games():
-    
+
     st.dataframe(df.groupby('year')['players'].max().sort_values(ascending=False))
 
 def global_trend_player():
@@ -56,15 +58,22 @@ def global_trend_player():
 
     st.plotly_chart(fig)
 
+tab1, tab2, tab3 = st.tabs(['Trend','Per Game','Seasonality'])
 col1, col2 = st.columns([1,1],gap='small')
 
-with col1:
-    st.subheader('')
+
+with tab1:
+    st.subheader('Global trend')
+
+    with col1:
+        st.subheader('')
+        table_games()
+    with col2:
+        st.subheader('Average players 2013-2023')
+        global_trend_player()
+
+with tab2:
+    st.subheader('Per Game')
     table_games()
-
-with col2:
-    st.subheader('Average players 2013-2023')
-    global_trend_player()
-
-#st.subheader('Global trend of average players (2013-2023)')
-#st.plotly_chart(global_trend_player)
+    #st.subheader('Global trend of average players (2013-2023)')
+    #st.plotly_chart(global_trend_player)
