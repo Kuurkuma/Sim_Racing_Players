@@ -26,6 +26,7 @@ df = load_data('data/interim/sim_racing_games-1.0.pkl')
 #_________________________
 
 def table_games():
+    
     st.dataframe(df.groupby('year')['players'].max().sort_values(ascending=False))
 
 def global_trend_player():
