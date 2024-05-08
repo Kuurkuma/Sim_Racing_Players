@@ -23,12 +23,16 @@ def load_data(data_path:str):
 # Define dataframe
 df = load_data('data/interim/sim_racing_games-1.0.pkl')
 
-
 #_________________________
 
+def table_games():
+    st.dataframe(df.groupby('year')['players'].max().sort_values(ascending=False))
+
 def global_trend_player():
+        # Group data to calculate the average players across all games
     global_trend = df.groupby('datetime')['players'].mean().reset_index()
 
+    # Create line chart for global trend
     fig = go.Figure()
 
     fig.add_trace(
@@ -40,17 +44,26 @@ def global_trend_player():
             line=dict(color='#d62728', width=1) # brick red = #d62728
         )
     )
-    st.plotly_chart(fig)
 
     fig.update_layout(
-        title='Global trend of average players',
+        title='',
         yaxis_title='Average players',
         template='plotly_dark',
         xaxis=dict(showgrid=False),
         yaxis=dict(showgrid=False)
     )
-    
-    #return global_trend_player 
 
-st.subheader('Global trend of average players (2013-2023)')
+    st.plotly_chart(fig)
+
+col1, col2 = st.columns([1,1],gap='small')
+
+with col1:
+    st.subheader('')
+    table_games()
+
+with col2:
+    st.subheader('Average players 2013-2023')
+    global_trend_player()
+
+#st.subheader('Global trend of average players (2013-2023)')
 #st.plotly_chart(global_trend_player)
