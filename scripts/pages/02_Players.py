@@ -27,8 +27,7 @@ df = load_data('data/interim/sim_racing_games-1.0.pkl')
 with st.expander('Show raw data'):
     st.dataframe(df[['game','datetime','players','twitch_viewers']])
 
-############################
-
+#_________________________
 # Defining all charts
 def table_games():
     st.dataframe(df.groupby('game')['players'].max().sort_values(ascending=False))
