@@ -119,13 +119,12 @@ def table_viewers():
     )        
 
 def player_per_game():
-        # Create line chart for the current game
+    # Create line chart for the current game
     line_chart = px.line(
-        df, 
+        df,
         x='datetime', 
         y='players', 
         color='game', 
-        height=500,
         title='Active players per game (2013-2023)', 
         template='plotly_dark'
     )
@@ -165,6 +164,7 @@ def player_per_game():
                     font=dict(color="rgba(255, 100, 100, 100)")                  
         )
     )
+    
     st.plotly_chart(line_chart)
 
 # define the game names for 2 functions representing the 2 bar plots for average players & viewers per game
@@ -218,7 +218,7 @@ def average_player_per_game():
     st.plotly_chart(fig_average_players)
 
 
-    fig_average_players.update_xaxes(labelalias=game_names)
+    #   fig_average_players.update_xaxes(labelalias=game_names)
 
     fig_average_players.add_hline(
         y=average_players.max(),
@@ -263,7 +263,7 @@ def average_viewer_per_game():
         showlegend=False,
     )
 
-    #viewers_day.update_xaxes(tickvals=weekdays_viewers.index,ticktext=[game_names[name] for name in weekdays_viewers['game']])
+    #viewers_day.update_xaxes(tickvals=weekdays_viewers.index,ticktext=[game_names[name] for name in weekdays_viewers['twitch_viewers']])
 
     st.plotly_chart(viewers_day)
 
@@ -347,43 +347,54 @@ def correlation_player_viewers():
     )
     st.plotly_chart(violin_twitch)
 
-
 #________________________
 
 # Dashboard layout
-tab1, tab2, tab3 = st.tabs(['Trend','Per Game','Seasonality'])
 
+# Define the tabs
+tab1, tab2, tab3 = st.tabs(['Trend', 'Game', 'Seasonality'])
+
+# Layout for Tab 1: Trend
 with tab1:
-    col1, col2 = st.columns([0.2,0.8],gap='medium')
-    subcol1, subcol2 = st.columns([0.8,0.2],gap='small')
+    col1, col2 = st.columns([1,6], gap='medium')
+    subcol1, subcol2 = st.columns([6,1], gap='medium')
+    
     with col1:
         st.subheader('')
-        table_games()
+        table_games()  # Function to display a table of games
 
     with col2:
         st.subheader('Average players 2013-2023')
-        global_trend_player()
+        global_trend_player()  # Function to display a global trend of players
 
     with subcol1:
         st.subheader('Twitch viewers 2015-2023')
-        global_trend_viewers()
+        global_trend_viewers()  # Function to display a global trend of viewers
     
     with subcol2:
         st.subheader('')
-        table_viewers()
+        table_viewers()  # Function to display a table of viewers
 
+# Layout for Tab 2: Game
 with tab2:
-    with st.container():
+    col1,col2 = st.columns([9,1])
+    subcol3, subcol4 = st.columns([8, 2])
+    
+    with col1:
         st.subheader('')
         player_per_game()
     
-    subcol1, subcol2 = st.columns([8,2])
-    with subcol1:
-            st.subheader('')
-            average_player_per_game()
-    with subcol2:
-            st.subheader('')
-            average_viewer_per_game()
-'''
-with tab3:
-    player_per_game()'''  
+    with col2:
+        st.subheader('')
+
+    with subcol3:
+        st.subheader('')
+        average_player_per_game() 
+    with subcol4:
+        st.subheader('')
+        average_viewer_per_game()  
+
+# Layout for Tab 3: Seasonality
+#with tab3:
+    #st.subheader('Seasonality Analysis')
+   # player_per_game()  # Reusing the function to display player data per game (consider renaming if it serves a different purpose)
