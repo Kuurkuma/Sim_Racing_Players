@@ -21,7 +21,7 @@ def load_data(data_path:str):
     return data
 
 # Define paths
-local_path = '/Users/macbook/Dropbox/Mac/Documents/Pro/Data_Analyst/Sim_Racing_Players/data/interim/sim_racing_games-1.0.pkl'
+local_path = '/Users/macbook/Development/Sim_Racing_Players/data/interim/sim_racing_games-1.0.pkl'
 net_path = 'data/interim/sim_racing_games-1.0.pkl'
 df = load_data(local_path)
 
