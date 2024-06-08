@@ -1,6 +1,6 @@
 import plotly.graph_objs as go
 
-def create_global_trend_chart(global_trend):
+def global_trend_chart(global_trend):
     """
     Create a line chart for the global trend of average players.
     
