@@ -1,0 +1,53 @@
+.
+├── LICENSE
+├── README.md
+├── data
+│   ├── interim
+│   │   └── sim_racing_games-1.0.pkl
+│   ├── processed
+│   └── raw
+│       ├── ATS_Price.csv
+│       ├── Assetto_corsa.csv
+│       ├── Assetto_corsa_competizione.csv
+│       ├── Automobilista_2 Steam Charts.csv
+│       ├── BeamNG.csv
+│       ├── CarX_drift_racing_online.csv
+│       ├── DiRT_rally_2.0_.csv
+│       ├── Euro_truck_2.csv
+│       ├── Forza_Horizon 4 Steam Charts.csv
+│       └── Forza_Horizon 5 Steam Charts.csv
+├── notebooks
+│   └── 1-ted-steam_trends.ipynb
+├── project_structure.txt
+├── reports
+│   ├── figures
+│   │   ├── 01-line_chart-global_trend.png
+│   │   ├── bar_plot-avg_player_game.png
+│   │   ├── bar_plot-avg_players_day.png
+│   │   ├── bar_plot-avg_viewer_game.png
+│   │   ├── line_chart-acc-automob.png
+│   │   ├── line_chart-asetto-beam.png
+│   │   ├── line_chart-carX-dirt2.png
+│   │   ├── line_chart-euro-american_truck.png
+│   │   ├── line_chart-fh4-fh5.png
+│   │   ├── line_chart-global_trend.png
+│   │   ├── line_chart-global_trend_2023.png
+│   │   ├── line_chart-global_trend_viewers.png
+│   │   ├── scatter_players_viewers.png
+│   │   └── violin_viewers.png
+│   └── html
+├── requirements.txt
+├── scripts
+│   ├── 01_Steam_Dashboard.py
+│   ├── 01_Steam_Dashboard_copy.py
+│   └── pages
+│       ├── 02_Players.py
+│       └── 03_Twitch_viewers.py
+├── src
+│   ├── __init__.py
+│   ├── analysis
+│   ├── data_prep
+│   └── visualization
+└── tests
+
+17 directories, 34 files
