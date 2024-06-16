@@ -104,7 +104,7 @@ def table_viewers():
     st.dataframe(
         df_viewers,
         column_config={
-            'year': st.column_config.NumberColumn(
+                'year': st.column_config.NumberColumn(
                 format="%d",
                 label='Year'
             ),

@@ -1,14 +1,5 @@
 {
     "workbench.colorTheme": "Moonlight II Italic",
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "server": "aws-0-us-east-1.pooler.supabase.com",
-            "port": 6543,
-            "driver": "PostgreSQL",
-            "name": "flashquad",
-            "database": "postgres",
-            "username": "postgres.aziubtuycalvmbdmfdqm"
-        }
-    ]
+    "sqltools.connections": [],
+    "terminal.explorerKind": "external"
 }

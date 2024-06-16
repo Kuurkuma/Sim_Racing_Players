@@ -38,16 +38,14 @@
 │   └── html
 ├── requirements.txt
 ├── scripts
-│   ├── 01_Steam_Dashboard.py
-│   ├── 01_Steam_Dashboard_copy.py
-│   └── pages
-│       ├── 02_Players.py
-│       └── 03_Twitch_viewers.py
+│   └── 01_Dashboard.py
 ├── src
 │   ├── __init__.py
 │   ├── analysis
 │   ├── data_prep
+│   │   └── prep_script.py
 │   └── visualization
+│       └── viz_script.py
 └── tests
 
-17 directories, 34 files
+16 directories, 33 files
