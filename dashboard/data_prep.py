@@ -15,6 +15,7 @@ def get_data_path(local_path: str, net_path: str) -> str:
     return net_path
 
 def global_trend(df):
+
     global_trend = df.groupby('datetime')['players'].mean().reset_index()
     return global_trend
 
