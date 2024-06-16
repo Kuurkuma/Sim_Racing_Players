@@ -1,6 +1,11 @@
 .
 ├── LICENSE
 ├── README.md
+├── dashboard
+│   ├── __init__.py
+│   ├── data_prep.py
+│   ├── main.py
+│   └── viz_script.py
 ├── data
 │   ├── interim
 │   │   └── sim_racing_games-1.0.pkl
@@ -39,13 +44,6 @@
 ├── requirements.txt
 ├── scripts
 │   └── 01_Dashboard.py
-├── src
-│   ├── __init__.py
-│   ├── analysis
-│   ├── data_prep
-│   │   └── prep_script.py
-│   └── visualization
-│       └── viz_script.py
 └── tests
 
-16 directories, 33 files
+13 directories, 34 files
