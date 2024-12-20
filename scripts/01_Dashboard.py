@@ -28,7 +28,7 @@ df = load_data('data/interim/sim_racing_games-1.0.pkl')
 # Create multiselect widget for selecting games
 default_game = ['Forza_horizon_4']
 selected_games = st.multiselect(
-    label="Select games to compare",
+    label="**Select games to compare**",
     options=df['game'].unique(),
     default=default_game
 )

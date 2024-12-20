@@ -22,13 +22,13 @@ def load_data(data_path:str):
 # Define dataframe
 df = load_data('data/interim/sim_racing_games-1.0.pkl')
 
-#-----------------
-
 # Create expander to show raw data
 with st.expander('Show raw data'):
     st.dataframe(df[['game','datetime','players','twitch_viewers']])
+# define 
+def table_viewers():
+    st.dataframe(df.groupby('game')['twitch_viewers'].max().sort_values(ascending=False))
 
-#------------------
 
 # Defining all charts
 def bar_chart_twitch():
@@ -63,21 +63,21 @@ def bar_chart_twitch():
 
 
 # Create column layout 
-col1, col2 = st.columns([1,2],gap="small")
+col1, col2 = st.columns([1,2],gap="medium")
 subcol1, subcol2 = st.columns([1,1],gap="small")
 
-with col1:
-   st.subheader('Most viewd games on Twitch')
-
-with col2:
-   st.subheader('Most viewed games on Twitch')
-   bar_chart_twitch()
-
-with subcol1:
-    st.subheader('Average players per game')
+with col1: 
+    st.subheader('Twitch - Most watched games ')
+    table_viewers()
     
 
-with subcol2:
-    st.subheader('Average players per day')
+with col2:
+    st.subheader('Average Twitch viewers per game')
+    bar_chart_twitch()
+   
+
+# with subcol1:  st.subheader('Average players per game')
+    
+#with subcol2:   st.subheader('Average players per day')
     
 
